@@ -1,0 +1,156 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Saundarya Indian Modern Beauty — design system.
+ *
+ * Palette: warm ivory, deep teal, saffron gold, soft terracotta, charcoal ink.
+ * Typography: Cormorant Garamond for display, Inter for body.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-teal: var(--teal);
+  --color-saffron: var(--saffron);
+  --color-terracotta: var(--terracotta);
+  --color-sand: var(--sand);
+  --color-ink: var(--ink);
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Semantic palette */
+  --background: oklch(0.975 0.012 85);
+  --foreground: oklch(0.19 0.03 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.03 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.03 264);
+  --primary: oklch(0.32 0.08 195);
+  --primary-foreground: oklch(0.97 0.01 85);
+  --secondary: oklch(0.94 0.02 85);
+  --secondary-foreground: oklch(0.19 0.03 264);
+  --muted: oklch(0.94 0.02 85);
+  --muted-foreground: oklch(0.48 0.04 264);
+  --accent: oklch(0.68 0.15 85);
+  --accent-foreground: oklch(0.97 0.01 85);
+  --destructive: oklch(0.52 0.2 25);
+  --destructive-foreground: oklch(0.97 0.01 85);
+  --border: oklch(0.88 0.02 85);
+  --input: oklch(0.88 0.02 85);
+  --ring: oklch(0.68 0.15 85);
+
+  /* Decorative palette */
+  --teal: oklch(0.32 0.08 195);
+  --saffron: oklch(0.68 0.15 85);
+  --terracotta: oklch(0.55 0.14 35);
+  --sand: oklch(0.94 0.02 85);
+  --ink: oklch(0.19 0.03 264);
+  --ivory: oklch(0.985 0.01 90);
+  --cream: oklch(0.97 0.015 85);
+
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "Inter", "system-ui", sans-serif;
+
+  --brand-color: var(--primary);
+  --brand-color-light: oklch(from var(--primary) l c h / 0.1);
+  --brand-color-hover: oklch(from var(--primary) calc(l - 0.1) c h);}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+@utility container-custom {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-custom {
+    max-width: 1280px;
+  }
+}
+
